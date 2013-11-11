@@ -17,7 +17,9 @@ public class Clock
     private JLabel label;
     private ClockDisplay clock;
     private boolean clockRunning = false;
+    private boolean threadRunning = false;
     private TimerThread timerThread;
+
     
     /**
      * Constructor for objects of class Clock
@@ -26,17 +28,32 @@ public class Clock
     {
         makeFrame();
         clock = new ClockDisplay();
+        startSyncThread();
     }
     
+    /**
+     * 
+     */
+    
+    public ClockDisplay getClockDisplay(){
+        return clock;
+    }
+    /**
+     * 
+     */
+    private void startSyncThread()
+    {
+        threadRunning = true;
+        timerThread = new TimerThread();
+        timerThread.start();
+    }
     /**
      * 
      */
     private void start()
     {
         clockRunning = true;
-        timerThread = new TimerThread();
-        timerThread.start();
-    }
+     }
     
     /**
      * 
@@ -113,7 +130,7 @@ public class Clock
                            });
         toolbar.add(stopButton);
 
-        JButton stepButton = new JButton("Step");
+        JButton stepButton = new JButton("Tick");
         stepButton.addActionListener(new ActionListener() {
                                public void actionPerformed(ActionEvent e) { step(); }
                            });
@@ -174,8 +191,9 @@ public class Clock
     {
         public void run()
         {
-            while (clockRunning) {
-                step();
+            while (threadRunning) {
+                if (clockRunning) step();
+                label.setText(clock.getTime());
                 pause();
             }
         }
