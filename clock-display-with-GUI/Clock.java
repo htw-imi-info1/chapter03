@@ -38,12 +38,8 @@ public class Clock
         return clock;
     }
 
-    public void setTimeFromClockDisplay(){
-        setTime(clock.getTime());
-    }
-
-    public void setTime(String time){
-        label.setText(time);
+    private void setTimeFromClockDisplay(){
+        label.setText(clock.getTime());
     }
 
     /**
