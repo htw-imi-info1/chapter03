@@ -25,8 +25,8 @@ public class Clock
      */
     public Clock()
     {
-        makeFrame();
         clock = new ClockDisplay();
+        makeFrame();
         startSyncThread();
     }
 
@@ -116,7 +116,7 @@ public class Clock
         contentPane.setLayout(new BorderLayout(12, 12));
 
         // Create the image pane in the center
-        label = new JLabel("00:00", SwingConstants.CENTER);
+        label = new JLabel(clock.getTime(), SwingConstants.CENTER);
         Font displayFont = label.getFont().deriveFont(96.0f);
         label.setFont(displayFont);
         //imagePanel.setBorder(new EtchedBorder());
