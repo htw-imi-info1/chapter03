@@ -7,16 +7,22 @@
  */
 public class Rational
 {
-    private int numerator;
-    private int denominator;
+    private int num;
+    private int den;
 
     /**
      * Constructor for objects of class Rational
      */
     public Rational(int numerator,int denominator)
     {
-        this.numerator = numerator;
-        this.denominator = denominator;
+        this.num = numerator;
+        this.den = denominator;
+    }
+
+    public Rational add(Rational r){
+        return new Rational(
+            this.num*r.den + r.num*this.den,
+            this.den*r.den);
     }
 
 }
