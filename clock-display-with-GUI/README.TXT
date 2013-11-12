@@ -10,7 +10,11 @@ This project is part of the material for the book
 
 It is discussed in chapter 3.
 
-This project adds a simple GUI (graphical user interface) to the 
+This project adds a simple GUI (graphical user interface) to the
 clock display project. When the clock is run, it runs at approximately
-3 minutes per second, so that the display can be tested a little more 
+3 minutes per second, so that the display can be tested a little more
 easily.
+
+Additions by BK:
+You can now start with creating a ClockDisplay, which
+creates the GUI within the constructor.
