@@ -63,8 +63,37 @@ public class NumberDisplay
      * Increment the display value by one, rolling over to zero if the
      * limit is reached.
      */
-    public void increment()
-    {
+    public void increment(){
+        incrementWithIf();
+    }
+        public void incrementOriginal(){
         value = (value + 1) % limit;
     }
+
+    /*
+     * 3.18: Welches sind die möglichen Werte des Ausdrucks (n % m) (n,m int)
+     * 0..m-1
+     * 
+     * 3.21. Schreiben Sie die Methode increment so um, dass sie eine if-Anweisung benutzt:
+     */
+    public void incrementWithIf()
+    {
+        value = value + 1;
+        if (value == limit)
+            value = 0;
+    }
+    /*
+    3.26 Schreiben Sie die Signatur eines Konstruktors, 
+    der zu folgender Objekterzeugung passt:  
+    
+    new Editor (“readme.txt”, -1)
+    
+    -> siehe klasse Editor
+    
+    3.27 Schreiben Sie Java-Anweisungen, die eine Variable 
+    fenster vom Typ Rechteck definieren, anschließend ein 
+    Rechteck-Objekt erzeugen und es dann dieser Variablen 
+    zuweisen. Der Konstruktor der Klasse Rechteck hat zwei 
+    int-Parameter.
+     */
 }

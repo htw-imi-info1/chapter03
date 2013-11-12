@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Editor()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Editor\n
+comment1.params=x\ y
+comment1.target=Editor(java.lang.String,\ int)
+comment2.params=
+comment2.target=void\ test()
+comment2.text=\n\ \ \ \ \ 3.26\ Schreiben\ Sie\ die\ Signatur\ eines\ Konstruktors,\ \n\ \ \ \ der\ zu\ folgender\ Objekterzeugung\ passt\:\ \u2028\n\ \ \ \ \n\ \ \ \ new\ Editor\ (\u201Creadme.txt\u201D,\ -1)\n
+comment3.params=
+comment3.target=void\ test2()
+comment3.text=\n\ \ \ \ \ \n\ \ \ \ 3.27\ Schreiben\ Sie\ Java-Anweisungen,\ die\ eine\ Variable\ \n\ \ \ \ fenster\ vom\ Typ\ Rechteck\ definieren,\ anschlie\u00DFend\ ein\ \n\ \ \ \ Rechteck-Objekt\ erzeugen\ und\ es\ dann\ dieser\ Variablen\ \n\ \ \ \ zuweisen.\ Der\ Konstruktor\ der\ Klasse\ Rechteck\ hat\ zwei\ \n\ \ \ \ int-Parameter.\n
+numComments=4
