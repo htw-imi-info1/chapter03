@@ -17,7 +17,7 @@ public class ClockDisplay
     private NumberDisplay hours;
     private NumberDisplay minutes;
     private String displayString;    // simulates the actual display
-    
+    private Clock guiDisplay;
     /**
      * Constructor for ClockDisplay objects. This constructor 
      * creates a new clock set at 00:00.
@@ -26,7 +26,8 @@ public class ClockDisplay
     {
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
-        updateDisplay();
+        guiDisplay = new Clock(this);
+        updateDisplay();   
     }
 
     /**
@@ -38,6 +39,7 @@ public class ClockDisplay
     {
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
+        guiDisplay = new Clock(this);
         setTime(hour, minute);
     }
 
