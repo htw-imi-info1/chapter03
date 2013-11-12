@@ -25,7 +25,15 @@ public class Clock
      */
     public Clock()
     {
-        clock = new ClockDisplay();
+        this(new ClockDisplay());
+    }
+    
+    /**
+     * Constructor for objects of class Clock
+     */
+    public Clock(ClockDisplay clock)
+    {
+        this.clock = clock;
         makeFrame();
         startSyncThread();
     }
