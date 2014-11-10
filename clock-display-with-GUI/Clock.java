@@ -10,6 +10,7 @@ import javax.swing.border.*;
  * 
  * @author Michael Kölling and David J. Barnes
  * @version 2011.07.31
+ * Adapted by B. Kleinen to make Model (ClockDisplay) independent from view.
  */
 public class Clock
 {
