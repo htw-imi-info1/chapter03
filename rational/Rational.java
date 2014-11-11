@@ -24,5 +24,8 @@ public class Rational
             this.num*r.den + r.num*this.den,
             this.den*r.den);
     }
+    public String toString(){
+        return ""+ num+"/" + den;
+    }
 
 }

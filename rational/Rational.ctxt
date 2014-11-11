@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=numerator\ denominator
+comment0.target=Rational(int,\ int)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Rational\n
+comment1.params=r
+comment1.target=Rational\ add(Rational)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3
