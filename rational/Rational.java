@@ -19,11 +19,12 @@ public class Rational
         den = denominator;
     }
 
-    public Rational add(Rational r){
+    public Rational add(Rational otto){
         return new Rational(
-            num*r.den + r.num*den,
-            den*r.den);
+            num*otto.den + otto.num*den,
+            den*otto.den);
     }
+    
     public String toString(){
         return ""+ num + "/" + den;
     }

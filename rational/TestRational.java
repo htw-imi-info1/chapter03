@@ -18,7 +18,8 @@ public class TestRational
         Rational b = new Rational(1, 3);
         Rational c = new Rational(1, 6);
         Rational sum = a.add(b).add(c);
-         System.out.println(a + " + " + b + " + " + c + " = " + sum);
+        System.out.println(a + " + " + b + " + " + c + " = " + sum);
     }
 
+    
 }

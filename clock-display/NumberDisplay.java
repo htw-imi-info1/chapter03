@@ -65,6 +65,10 @@ public class NumberDisplay
      */
     public void increment()
     {
-        value = (value + 1) % limit;
+        // value = (value + 1) % limit;
+        value = value +1;
+        if (value == limit)
+            value = 0;
+
     }
 }
