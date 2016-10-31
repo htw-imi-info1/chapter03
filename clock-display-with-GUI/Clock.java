@@ -28,7 +28,7 @@ public class Clock
     {
         this(new ClockDisplay());
     }
-    
+
     /**
      * Constructor for objects of class Clock
      */
@@ -82,6 +82,10 @@ public class Clock
      */
     private void step()
     {
+        tick();
+    }
+
+    public void tick(){
         clock.timeTick();
         label.setText(clock.getTime());
     }
