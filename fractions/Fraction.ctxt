@@ -1,9 +1,11 @@
 #BlueJ class context
-comment0.params=numerator\ denominator
-comment0.target=Fraction(int,\ int)
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Rational\n
-comment1.params=other
-comment1.target=Fraction\ add(Fraction)
-comment2.params=
-comment2.target=java.lang.String\ toString()
-numComments=3
+comment0.target=Fraction
+comment0.text=\n\ Represents\ a\ Fraction.\n\ \n\ @author\ Barne\ Kleinen\n
+comment1.params=numerator\ denominator
+comment1.target=Fraction(int,\ int)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Rational\n
+comment2.params=other
+comment2.target=Fraction\ add(Fraction)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

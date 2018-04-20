@@ -2,7 +2,7 @@
 /**
  * Demonstrates the Fraction Class.
  * 
- * @author B. Kleinen 
+ * @author Barne Kleinen 
  */
 public class TestFraction
 {

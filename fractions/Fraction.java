@@ -2,8 +2,7 @@
 /**
  * Represents a Fraction.
  * 
- * @author Barbara Kleinen
- * @version 04.11.2013
+ * @author Barne Kleinen
  */
 public class Fraction
 {
