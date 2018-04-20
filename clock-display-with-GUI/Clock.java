@@ -9,8 +9,7 @@ import javax.swing.border.*;
  * testing the display is a little quicker.
  * 
  * @author Michael Kölling and David J. Barnes
- * @version 2011.07.31
- * Adapted by B. Kleinen to make Model (ClockDisplay) independent from view.
+ * @version 2016.02.29
  */
 public class Clock
 {
@@ -18,57 +17,27 @@ public class Clock
     private JLabel label;
     private ClockDisplay clock;
     private boolean clockRunning = false;
-    private boolean threadRunning = false;
     private TimerThread timerThread;
-
+    
     /**
      * Constructor for objects of class Clock
      */
     public Clock()
     {
-        this(new ClockDisplay());
-    }
-
-    /**
-     * Constructor for objects of class Clock
-     */
-    public Clock(ClockDisplay clock)
-    {
-        this.clock = clock;
         makeFrame();
-        startSyncThread();
+        clock = new ClockDisplay();
     }
-
-    /**
-     * 
-     */
-
-    public ClockDisplay getClockDisplay(){
-        return clock;
-    }
-
-    private void setTimeFromClockDisplay(){
-        label.setText(clock.getTime());
-    }
-
-    /**
-     * 
-     */
-    private void startSyncThread()
-    {
-        threadRunning = true;
-        timerThread = new TimerThread();
-        timerThread.start();
-    }
-
+    
     /**
      * 
      */
     private void start()
     {
         clockRunning = true;
+        timerThread = new TimerThread();
+        timerThread.start();
     }
-
+    
     /**
      * 
      */
@@ -76,32 +45,28 @@ public class Clock
     {
         clockRunning = false;
     }
-
+    
     /**
      * 
      */
     private void step()
     {
-        tick();
-    }
-
-    public void tick(){
         clock.timeTick();
         label.setText(clock.getTime());
     }
-
+    
     /**
      * 'About' function: show the 'about' box.
      */
     private void showAbout()
     {
         JOptionPane.showMessageDialog (frame, 
-            "Clock Version 1.0\n" +
-            "A simple interface for the 'Objects First' clock display project",
-            "About Clock", 
-            JOptionPane.INFORMATION_MESSAGE);
+                    "Clock Version 1.0\n" +
+                    "A simple interface for the 'Objects First' clock display project",
+                    "About Clock", 
+                    JOptionPane.INFORMATION_MESSAGE);
     }
-
+    
     /**
      * Quit function: quit the application.
      */
@@ -110,6 +75,7 @@ public class Clock
         System.exit(0);
     }
 
+    
     /**
      * Create the Swing frame and its content.
      */
@@ -120,12 +86,12 @@ public class Clock
         contentPane.setBorder(new EmptyBorder(1, 60, 1, 60));
 
         makeMenuBar(frame);
-
+        
         // Specify the layout manager with nice spacing
         contentPane.setLayout(new BorderLayout(12, 12));
-
+        
         // Create the image pane in the center
-        label = new JLabel(clock.getTime(), SwingConstants.CENTER);
+        label = new JLabel("00:00", SwingConstants.CENTER);
         Font displayFont = label.getFont().deriveFont(96.0f);
         label.setFont(displayFont);
         //imagePanel.setBorder(new EtchedBorder());
@@ -134,40 +100,34 @@ public class Clock
         // Create the toolbar with the buttons
         JPanel toolbar = new JPanel();
         toolbar.setLayout(new GridLayout(1, 0));
-
+        
         JButton startButton = new JButton("Start");
-        startButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) { start(); }
-            });
+        startButton.addActionListener(e -> start());
         toolbar.add(startButton);
-
+        
         JButton stopButton = new JButton("Stop");
-        stopButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) { stop(); }
-            });
+        stopButton.addActionListener(e -> stop());
         toolbar.add(stopButton);
 
-        JButton stepButton = new JButton("Tick");
-        stepButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) { step(); }
-            });
+        JButton stepButton = new JButton("Step");
+        stepButton.addActionListener(e -> step());
         toolbar.add(stepButton);
 
         // Add toolbar into panel with flow layout for spacing
         JPanel flow = new JPanel();
         flow.add(toolbar);
-
+        
         contentPane.add(flow, BorderLayout.SOUTH);
-
+        
         // building is done - arrange the components      
         frame.pack();
-
+        
         // place the frame at the center of the screen and show
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         frame.setLocation(d.width/2 - frame.getWidth()/2, d.height/2 - frame.getHeight()/2);
         frame.setVisible(true);
     }
-
+    
     /**
      * Create the main frame's menu bar.
      * 
@@ -180,42 +140,36 @@ public class Clock
 
         JMenuBar menubar = new JMenuBar();
         frame.setJMenuBar(menubar);
-
+        
         JMenu menu;
         JMenuItem item;
-
+        
         // create the File menu
         menu = new JMenu("File");
         menubar.add(menu);
-
+        
         item = new JMenuItem("About Clock...");
-        item.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) { showAbout(); }
-            });
+            item.addActionListener(e -> showAbout());
         menu.add(item);
 
         menu.addSeparator();
-
+        
         item = new JMenuItem("Quit");
-        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, SHORTCUT_MASK));
-        item.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) { quit(); }
-            });
+            item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, SHORTCUT_MASK));
+            item.addActionListener(e -> quit());
         menu.add(item);
     }
-
+    
     class TimerThread extends Thread
     {
         public void run()
         {
-            while (threadRunning) {
-                if (clockRunning) 
-                    step();
-                setTimeFromClockDisplay();
+            while (clockRunning) {
+                step();
                 pause();
             }
         }
-
+        
         private void pause()
         {
             try {
