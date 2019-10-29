@@ -15,7 +15,7 @@ public class Clock
 {
     private JFrame frame;
     private JLabel label;
-    private ClockDisplay clock;
+    private ClockDisplay clockDisplay;
     private boolean clockRunning = false;
     private TimerThread timerThread;
     
@@ -25,9 +25,11 @@ public class Clock
     public Clock()
     {
         makeFrame();
-        clock = new ClockDisplay();
+        clockDisplay = new ClockDisplay();
     }
-    
+    public ClockDisplay getClockDisplay(){
+        return clockDisplay;
+    }
     /**
      * 
      */
@@ -51,8 +53,8 @@ public class Clock
      */
     private void step()
     {
-        clock.timeTick();
-        label.setText(clock.getTime());
+        clockDisplay.timeTick();
+        label.setText(clockDisplay.getTime());
     }
     
     /**
