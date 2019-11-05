@@ -5,18 +5,8 @@
  */
 public class VariableScopePlayground
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class VariableScopePlayground
-     */
-    public VariableScopePlayground()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
+    // instance variables 
+    private int x = 0;
     public void methodWithLocalParameter()
     {
         System.out.println("1. x is  now and here "+x);
