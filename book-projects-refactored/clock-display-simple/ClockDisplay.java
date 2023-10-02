@@ -85,7 +85,7 @@ public class ClockDisplay
     /** 
      * moved from NumberDisplay
      */
-    public String getDisplayValue(int value)
+    private String getDisplayValue(int value)
     {
         if(value < 10) {
             return "0" + value;
