@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=NumberDisplay
+comment1.params=
+comment1.target=NumberDisplay()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ NumberDisplay.\n\ Set\ the\ limit\ at\ which\ the\ display\ rolls\ over.\n
+comment2.params=x\ y\ leds
+comment2.target=void\ initDisplay(int,\ int,\ LEDs.LEDClockDisplay)
+comment3.params=value
+comment3.target=void\ updateDisplay(int)
+comment3.text=\n\ Addition\ for\ LED-Display\:\ update\ the\ single\ digits\n
+comment4.params=twoChars
+comment4.target=void\ updateDisplay(java.lang.String)
+comment4.text=\n\ Addition\ for\ LED-Display\:\ update\ am/pm\n
+numComments=5

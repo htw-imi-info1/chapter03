@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=DisplayInterface
+comment0.text=\n\ Provide\ an\ interface\ the\ clients\ can\ depend\ on.\n\ Tried\ to\ avoid\ it;\ but\ cannot\ depend\ on\ default\ package.\n\n\ @author\ Barne\ Kleinen\n
+comment1.params=x\ y\ leds
+comment1.target=void\ initDisplay(int,\ int,\ LEDClockDisplay)
+comment1.text=\ \n\ NumberDisplay\ has\ to\ implement\ this\ as\ it\ "knows"\ which\ segments\ need\ to\ be\ added.\n
+numComments=2

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=LedDisplay
+comment1.params=
+comment1.target=LedDisplay()
+comment2.params=hours\ minutes
+comment2.target=LedDisplay(int,\ int)
+comment3.params=hour\ minute
+comment3.target=void\ initRealDisplay(int,\ int)
+comment4.params=
+comment4.target=void\ updateRealDisplay()
+comment4.text=\n\ Set\ the\ time\ of\ the\ display\ to\ the\ specified\ hour\ and\n\ minute.\n
+numComments=5

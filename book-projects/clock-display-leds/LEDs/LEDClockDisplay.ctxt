@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=LEDClockDisplay
+comment0.text=\n\ class\ LEDClockDisplay\ hides\ as\ much\ of\ the\ display\ complexity\n\ as\ possible\ to\ keep\ the\ example\ of\ ClockDisplay\ and\ NumberDisplay\ as\ simple\ as\ possible.\n\n\ @author\ Barne\ Kleinen\n
+comment1.params=
+comment1.target=LEDClockDisplay()
+comment10.params=title
+comment10.target=Canvas\ getTestCanvas(java.lang.String)
+comment2.params=withAmPm
+comment2.target=LEDClockDisplay(boolean)
+comment3.params=canvas
+comment3.target=LEDClockDisplay(Canvas)
+comment4.params=hours\ minutes
+comment4.target=void\ add(DisplayInterface,\ DisplayInterface)
+comment5.params=ampm
+comment5.target=void\ add(DisplayInterface)
+comment6.params=x\ y
+comment6.target=LEDDigit\ createLEDDigit(int,\ int)
+comment7.params=
+comment7.target=void\ showWindow()
+comment8.params=
+comment8.target=Canvas\ getCanvas()
+comment9.params=title
+comment9.target=LEDClockDisplay\ testInstance(java.lang.String)
+comment9.text=\n\ test\ stuff\n
+numComments=11

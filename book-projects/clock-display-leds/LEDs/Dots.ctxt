@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Dots
+comment0.text=\n\ Two\ litte\ circles\ representing\ the\ colon\ in\ HH\:mm\n\n\ @author\ Barne\ Kleinen\n
+comment1.params=x\ y\ color\ canvas
+comment1.target=Dots(int,\ int,\ java.lang.String,\ Canvas)
+comment2.params=
+comment2.target=void\ display()
+comment3.params=
+comment3.target=Dots\ getTestInstance()
+numComments=4
