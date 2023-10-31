@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class LEDDigit
 {
     // instance variables - replace the example below with your own
-   
+
     public static int SEG_H = 8;
     public static int SEG_W = 60;
     private static int NO_OF_SEGMENTS_DIGIT = 7;
@@ -70,14 +70,15 @@ public class LEDDigit
      *    | 6 |
      *    -----
      */
-    
+
     static{
         bitsMapCharacters.put('P',0B000110111);
+        bitsMapCharacters.put('p',0B000110111);
         bitsMapCharacters.put('A',0B000111111);
+        bitsMapCharacters.put('a',0B000111111);
         bitsMapCharacters.put('M',0B110001111);
-
+        bitsMapCharacters.put('m',0B110001111);
     }
-    
     // these strings need to be defined in Canvas!
     //private String[] colors = {"black","blue","yellow","green", "magenta","orange","red"};
     private String[] colors = {"led","led","led","led","led","led","led"};
@@ -106,22 +107,20 @@ public class LEDDigit
             };
         coords = coords_constructor; // necessary due to Java array literals restrictions
         setCanvas(canvas);
-        }
-        public void setCanvas(Canvas canvas){
-            this.canvas = canvas;
-        
+    }
+
+    public void setCanvas(Canvas canvas){
+        this.canvas = canvas;
+
         int width = 60, height = 8; 
         int i = 0;
         for (; i<4; i++)
             segments[i] = new Segment(SEG_H, SEG_W,coords[i][0],coords[i][1],colors[i], canvas);
         for (; i<NO_OF_SEGMENTS_DIGIT; i++)
             segments[i] = new Segment(SEG_W, SEG_H,coords[i][0],coords[i][1],colors[i], canvas);
-        
-            
-        initMDiagonals();
 
+        initMDiagonals();
     }
-    
     private void initMDiagonals(){
         int TOP = getUpperVerticalsTop();
         int width = (int)(0.8 * SEG_W);
@@ -146,25 +145,23 @@ public class LEDDigit
         display(bits[n]);
     }
 
-    
     public void displayChar(char c){
         int bits= bitsMapCharacters.get(c);
         display((byte)bits);
     }
-    
-    
+
     //public static void main(String[] args){ show();}
     public static LEDDigit getTestInstance(){
-        
+
         Canvas canvas = LEDClockDisplay.testInstance("DigitDisplay Tester").getCanvas();
         LEDDigit dd = new LEDDigit(default_left,default_top, canvas);
-        
+
         dd.display(8);
         return dd;
     }
 
     public static LEDDigit testAll(){
-        
+
         Canvas canvas = LEDClockDisplay.testInstance("DigitDisplay Tester").getCanvas();
         LEDDigit ndd = new LEDDigit(default_left,default_top, canvas);
         for (int i = 0;i<10;i++){
@@ -174,11 +171,11 @@ public class LEDDigit
         return ndd;
     }
 
-     public static LEDDigit testAllAMPM(){
-         Canvas canvas = LEDClockDisplay.testInstance("APMDisplay Tester").getCanvas();
+    public static LEDDigit testAllAMPM(){
+        Canvas canvas = LEDClockDisplay.testInstance("APMDisplay Tester").getCanvas();
         LEDDigit ndd = new LEDDigit(20,20,
-        canvas);
-        
+                canvas);
+
         // for (int i = 0;i<10;i++){
         // ndd.display(i);
         // Canvas.getCanvas().wait(1000);
@@ -191,6 +188,7 @@ public class LEDDigit
         }
         return ndd;
     }
+
     public int getLeft(){return left;}
 
     public int getTop(){return top;}
