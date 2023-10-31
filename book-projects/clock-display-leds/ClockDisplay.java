@@ -161,15 +161,21 @@ public class ClockDisplay
      * toggles between system time and a fast 
      * ticker.
      */
-    public void setTickerSpeed(int fastTickerSpeed){
-        clockThread.pause = fastTickerSpeed;
-    }
-
     public void toggleTicker(){
         useSystemTime = !useSystemTime;
         if (useSystemTime && clockThread != null)
             clockThread.pause = 300;
     }
+    
+    /**
+     * sets the ticker speed in ms.
+     * the ticker speed will be reset for system time.
+     */
+    public void setTickerSpeed(int pauseInMs){
+        if (clockThread != null)
+            clockThread.pause = pauseInMs;
+    }
+
 
     private int modCount = 0;
     private ClockThread clockThread;
