@@ -38,4 +38,5 @@ Test the crucial timeTicks:
     ld.setTime(23,59);
     ld.timeTick();
 
-## 
+## UML Diagrams
+can be found here: [https://home.htw-berlin.de/~kleinen/material/info1/clock_display_refactoring/led_display/](https://home.htw-berlin.de/~kleinen/material/info1/clock_display_refactoring/led_display/)
