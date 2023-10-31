@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
  */
 public class ClockDisplay
 {
+    public static boolean WITH_AM_PM = true;
     public final static int HOURS_IN_DAY = 24;
     public final static int MINUTES_IN_HOUR = 60;
     public final static int MINUTES_LIMIT = HOURS_IN_DAY * MINUTES_IN_HOUR;

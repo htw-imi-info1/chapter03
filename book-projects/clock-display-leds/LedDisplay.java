@@ -2,12 +2,14 @@ import LEDs.*;
 
 public class LedDisplay extends ClockDisplay
 {
-    private static boolean withAmPm = false;
+    static{
+        WITH_AM_PM = false;
+    }
     private LEDClockDisplay leds;
     private NumberDisplay ampm;
     private NumberDisplay hours;
     private NumberDisplay minutes;
- 
+
     public LedDisplay(){
         super();
     }
@@ -18,7 +20,7 @@ public class LedDisplay extends ClockDisplay
 
     public void initRealDisplay(int hour, int minute)
     {
-        leds = new LEDClockDisplay(withAmPm);
+        leds = new LEDClockDisplay(WITH_AM_PM);
         hours = new NumberDisplay(); 
         minutes = new NumberDisplay();
 
