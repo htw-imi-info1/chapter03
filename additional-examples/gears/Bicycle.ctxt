@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Bicycle
+comment1.params=
+comment1.target=Bicycle()
+comment2.params=wheel\ gear
+comment2.target=Bicycle(Wheel,\ Gear)
+comment3.params=
+comment3.target=double\ gearInches()
+comment3.text=\n\ Gear\ inches\ express\ gear\ ratios\ in\ terms\ of\ the\ diameter\ of\ an\ equivalent\ directly\ driven\ wheel,\ and\ is\ calculated\ as\ follows\:\n\n\ gear\ inches\ \=\ wheel\ diameter\ in\ inches\ \u00D7\ (teeth\ in\ front\ chainring\ /teeth\ in\ rear\ sprocket)\n\ see\ https\://en.wikipedia.org/wiki/Gear_inches\n
+comment4.params=
+comment4.target=double\ rollOut()
+comment4.text=\n\ Metres\ of\ development\ or\ roll-out\:\ \n\ \n\ Metres\ of\ development\ \=\ Circumference\ of\ drive\ wheel\ in\ metres\ \u00D7\ \n\ (number\ of\ teeth\ in\ front\ chainring\ /\ number\ of\ teeth\ in\ rear\ sprocket).\nhttps\://en.wikipedia.org/wiki/Bicycle_gearing\n
+numComments=5

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Wheel
+comment1.params=rim\ tire
+comment1.target=Wheel(int,\ int)
+comment1.text=\n\ @param\ rim\ \ -\ rim\ size\ in\ mm\n\ @param\ tire\ -\ tire\ size\ in\ mm\n
+comment2.params=
+comment2.target=double\ getCircumference()
+comment3.params=
+comment3.target=double\ getDiameterMM()
+comment4.params=
+comment4.target=double\ getDiameterInches()
+numComments=5
